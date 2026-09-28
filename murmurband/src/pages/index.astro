@@ -1,0 +1,37 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import '../styles/index.css';
+---
+<SiteLayout>
+<header >
+       
+        <div id="logo" >
+            <a href="/demo.html">
+            <img src="/cover.png"> 
+          </a>
+          
+        </div>
+            
+</header>
+            
+    
+
+            <div class="inlinevideo">
+              <video autoplay="true" muted="true" loop="true"  playsinline="true">
+                <source src="/ocean-back.mp4" type="video/mp4"> 
+              </video>      
+             </div>
+            
+             
+    
+
+	
+	<footer>
+	</footer>
+<script>
+  document.addEventListener('pointerdown', () => {
+    document.querySelector('video')?.play().catch(() => {});
+  }, { once: true });
+</script>
+
+</SiteLayout>

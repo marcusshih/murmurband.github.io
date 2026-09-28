@@ -1,0 +1,31 @@
+<header>
+        <div class="wrapper">
+            <div class="title" >
+                <img class="titleimg" src="/allmurmur.png" alt="自言自語Murmur"> 
+            </div>
+            <div class="menu-box" role="button" tabindex="0" aria-controls="menu" aria-expanded="false">M E<br>N U</div>
+        </div>
+        <div>
+            <div id="menu" class="menu-close">
+                <a href="/demo.html">home</a>
+                <a href="/story.html">story</a>
+                <a href="/works.html">works</a>
+                
+            </div>
+        </div>
+    </header>
+<script>
+  const toggle = document.querySelector<HTMLElement>('.menu-box');
+  const menu = document.getElementById('menu');
+  function toggleMenu() {
+    const open = menu?.classList.toggle('menu-open') ?? false;
+    toggle?.setAttribute('aria-expanded', String(open));
+  }
+  toggle?.addEventListener('click', toggleMenu);
+  toggle?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMenu();
+    }
+  });
+</script>
