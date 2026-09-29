@@ -202,3 +202,11 @@ a:visited{
 
     
 }
+
+/* Keep the existing composition while preventing navigation overlap on small screens. */
+.title { max-width: 100%; }
+.menu a { display: inline-flex; align-items: center; min-height: 24px; }
+@media (max-width: 650px) {
+  .title { min-height: 100px; }
+  .menu { width: auto; font-size: max(2vw, 12px); display: inline-flex; gap: 12px; }
+}

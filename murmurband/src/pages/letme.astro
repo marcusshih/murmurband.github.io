@@ -1,28 +1,30 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-import '../styles/lyrics.css';
-import SiteHeader from '../components/SiteHeader.astro';
+import OceanLayout from '../layouts/OceanLayout.astro';
+import releases from '../data/releases.json';
+const release = releases.find((item) => item.slug === "letme")!;
 ---
-<SiteLayout>
-<SiteHeader />
-    
-    <div class="bg">
-        <picture>
-            <source media="(min-width: 769px)" srcset="/works-bg.jpg">
-            <source media="(min-width: 768px)" srcset="/star1.png">
-            <img src="/star1.png"/>
-        </picture>
-    </div>
-
-     <div class="title-2" >
-            <img class="titleimg-2" src="/allmurmur.png"> 
-        </div> 
-    
-
-    
-    <div class = st> 
-        <a class="st_title" href="https://streetvoice.com/murmurband_/songs/707009/">讓我擁抱你所有的模樣</a>   
-        <div class="st_composer">作詞・作曲：盧瑞珍／施柏年</div>   
+<OceanLayout title={release.title + ' · Murmur'}>
+  <main id="page-content" tabindex="-1" class="lyrics-page">
+    <aside class="record-panel">
+      <a class="back-link" lang="en" href="/works.html">← All works</a>
+      <img class="record-cover" src={release.image} alt={release.title + ' 封面'} />
+      <p class="record-title">{release.title}</p>
+      {release.english !== release.title && <p class="record-name" lang="en">{release.english}</p>}
+      <p class="eyebrow">{release.date}</p>
+      <div class="st_composer">作詞・作曲：盧瑞珍／施柏年</div>
+      <div class="st_artist">
+            編曲 Arranger｜施柏年 Marcus Shih
+            <br>主唱 Vocalist｜盧瑞珍 Jane Lu
+            <br>木吉他 Acoustic Guitarist｜施柏年 Marcus Shih
+            <br>木箱鼓 Cajonist｜施柏年 Marcus Shih
+            <br>
+            <br>
+        </div>
+    </aside>
+    <article class="lyrics-content">
+<div class = st> 
+        <h1><a class="st_title" href="https://streetvoice.com/murmurband_/songs/707009/">讓我擁抱你所有的模樣</a></h1>   
+           
         <div class="st_text">
             陽光灑落每片車窗
             <br>對著窗外風景想像
@@ -76,14 +78,9 @@ import SiteHeader from '../components/SiteHeader.astro';
             <br>
             <br>           
         </div>
-        <div class="st_artist">
-            編曲 Arranger｜施柏年 Marcus Shih
-            <br>主唱 Vocalist｜盧瑞珍 Jane Lu
-            <br>木吉他 Acoustic Guitarist｜施柏年 Marcus Shih
-            <br>木箱鼓 Cajonist｜施柏年 Marcus Shih
-            <br>
-            <br>
-        </div>   
+           
     </div>
-    <div class="black"></div>
-</SiteLayout>
+      <a class="back-link lyrics-back" lang="en" href="/works.html">← All works</a>
+    </article>
+  </main>
+</OceanLayout>

@@ -1,26 +1,4 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-import '../styles/demo.css';
-import SiteHeader from '../components/SiteHeader.astro';
-import SocialFooter from '../components/SocialFooter.astro';
+import Home from '../components/Home.astro';
 ---
-<SiteLayout animation>
-<SiteHeader />
-    
-    
-
-    
-    
-    <div class="bg">
-        <picture>
-            <source media="(min-width: 769px)" srcset="/tainansea1.jpg">
-            <source media="(min-width: 768px)" srcset="/tainansea.jpg">
-            <img src="/tainansea.jpg"/>
-        </picture>
-    </div>
-
-    <div id="canvas-container"></div>
-
-
-    <SocialFooter />
-</SiteLayout>
+<Home />
